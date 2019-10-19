@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  jupyter:
+    image: jupyter/datascience-notebook
+    ports:
+      - 8888:8888
+    volumes:
+      - ./notebooks/:/home/jovyan/
+      - ./data/:/home/jovyan/data
+    command:
+      jupyter notebook --ip='*' --NotebookApp.token='' --NotebookApp.password=''
